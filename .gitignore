@@ -1,5 +1,8 @@
-__pycache__/
-*.pt
 runs/
-cv_env/
+*.pt
+*.pth
+__pycache__/
+*.pyc
+env/
 yolo_env/
+cv_env/
