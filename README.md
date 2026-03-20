@@ -52,15 +52,22 @@ model.train(
     epochs=50,
     imgsz=640
 )
-
-## How to Run
+```
+## How to run
 
 ### Step 1: Create Virtual Environment
+```python
+
 python3 -m venv cv_env  
 source cv_env/bin/activate  
-
+```
 ### Step 2: Install Dependencies
-pip install -r requirements.txt  
+```python
 
+pip install -r requirements.txt  
+```
 ### Step 3: Run
+```python
+
 python3 custom_yolo.py  
+```
