@@ -34,6 +34,10 @@ The dataset includes the following object classes:
 - **Rubble class** combines bricks, tiles, and stones for better generalization
 - Dataset includes both **isolated objects and multi-object scenes**
 
+## Observations
+
+Some misclassifications were observed in real-time (e.g., TV detected as window). This is because of the gap between training data and real-world scenarios.
+
 ## Training
 
 The model was trained using **YOLOv8n** on the custom dataset.
@@ -48,3 +52,15 @@ model.train(
     epochs=50,
     imgsz=640
 )
+
+## How to Run
+
+### Step 1: Create Virtual Environment
+python3 -m venv cv_env  
+source cv_env/bin/activate  
+
+### Step 2: Install Dependencies
+pip install -r requirements.txt  
+
+### Step 3: Run
+python3 custom_yolo.py  
