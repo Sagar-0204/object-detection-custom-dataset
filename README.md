@@ -34,6 +34,15 @@ The dataset includes the following object classes:
 - **Rubble class** combines bricks, tiles, and stones for better generalization
 - Dataset includes both **isolated objects and multi-object scenes**
 
+## Performance Metrics
+
+### Training Performance:
+- mAP@50: ~73.3%
+
+### Deployment Performance:
+- Inference Speed: ~15 FPS (CPU)
+- RAM Usage: ~1 GB
+
 ## Observations
 
 Some misclassifications were observed in real-time (e.g., TV detected as window). This is because of the gap between training data and real-world scenarios.
