@@ -12,6 +12,9 @@ A custom dataset was created using publicly available images and manually annota
 - Annotation Tool: **Roboflow**
 - Task Type: **Object Detection (Bounding Boxes)**
 
+Due to size constraints, the dataset is not included in this repository.
+Dataset link: [[Google Drive Link]](https://drive.google.com/drive/folders/1VvcouMpLDoPu3CXYi-q-HiKedxlysrTe?usp=drive_link)
+
 ### Classes:
 
 The dataset includes the following object classes:
