@@ -8,12 +8,12 @@ The final system performs real-time detection using a CPU-based ONNX model.
 A custom dataset was created using publicly available images and manually annotated.
 
 ### Dataset Details:
-- Total Images: **2170**
+- Total Images: **4127**
 - Annotation Tool: **Roboflow**
 - Task Type: **Object Detection (Bounding Boxes)**
 
 Due to size constraints, the dataset is not included in this repository.
-Dataset link: [[Google Drive Link]](https://drive.google.com/drive/folders/1VvcouMpLDoPu3CXYi-q-HiKedxlysrTe?usp=drive_link)
+Dataset link: [Google Drive Link](https://drive.google.com/file/d/1M6jVp68H6vrASBrBQsRIgruYh99SNoNd/view?usp=drive_link)
 
 ### Classes:
 
@@ -33,17 +33,14 @@ The dataset includes the following object classes:
 - fire extinguisher  
 - humans  
 
-### Key Notes:
-- **Rubble class** combines bricks, tiles, and stones for better generalization
-- Dataset includes both **isolated objects and multi-object scenes**
 
 ## Performance Metrics
 
 ### Training Performance:
-- mAP@50: ~73.3%
+- mAP@50: ~71.6%
 
 ### Deployment Performance:
-- Inference Speed: ~15 FPS (CPU)
+- Inference Speed: ~14 FPS (CPU)
 - RAM Usage: ~1 GB
 
 ## Observations
@@ -60,8 +57,8 @@ from ultralytics import YOLO
 model = YOLO("yolov8n.pt")
 
 model.train(
-    data="dataset/data.yaml",
-    epochs=50,
+    data="final_v5/data.yaml",
+    epochs=100,
     imgsz=640
 )
 ```
