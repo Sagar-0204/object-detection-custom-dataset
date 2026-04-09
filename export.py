@@ -7,9 +7,9 @@ model = YOLO("runs/detect/final5/weights/best.pt")
 model.export(
     format="onnx",
     imgsz=640,
-    opset=13,        # stable ONNX version
-    simplify=True,   # optimize graph
-    dynamic=False    # fixed input size (faster on CPU)
+    opset=13,        
+    simplify=True,   
+    dynamic=False 
 )
 
-print("✅ Model exported to ONNX successfully")
+print("Model exported to ONNX")
