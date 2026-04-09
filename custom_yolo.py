@@ -8,7 +8,6 @@ model = YOLO("runs/detect/final5/weights/best.onnx", task="detect")
 cv2.setUseOptimized(True)
 cv2.setNumThreads(16)
 
-# Webcam
 cap = cv2.VideoCapture(0)
 
 if not cap.isOpened():
@@ -23,16 +22,13 @@ while True:
     if not ret:
         break
 
-    # Resize for performance
+    
     frame = cv2.resize(frame, (416, 416))
 
-    # Inference (CPU)
     results = model(frame, verbose=False, device="cpu", conf=0.15)
-
-    # Draw results
     annotated_frame = results[0].plot()
-
-    # FPS calculation
+    
+    # FPS
     cur_frame += 1
     elapsed_time = time.time() - start_time
     fps = cur_frame / elapsed_time
@@ -48,7 +44,7 @@ while True:
     )
 
     # Display
-    cv2.imshow("Real-Time Detection (ONNX)", annotated_frame)
+    cv2.imshow("Object Detection", annotated_frame)
 
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
