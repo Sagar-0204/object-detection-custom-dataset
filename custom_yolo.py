@@ -3,7 +3,7 @@ from ultralytics import YOLO
 import time
 
 # Load ONNX model
-model = YOLO("runs/detect/train5/weights/best.onnx", task="detect")
+model = YOLO("runs/detect/final5/weights/best.onnx", task="detect")
 
 cv2.setUseOptimized(True)
 cv2.setNumThreads(16)
@@ -24,10 +24,10 @@ while True:
         break
 
     # Resize for performance
-    frame = cv2.resize(frame, (640, 640))
+    frame = cv2.resize(frame, (416, 416))
 
     # Inference (CPU)
-    results = model(frame, verbose=False, device="cpu")
+    results = model(frame, verbose=False, device="cpu", conf=0.15)
 
     # Draw results
     annotated_frame = results[0].plot()
